@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultActivity"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+   <TextView
+       android:id="@+id/text_header"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="আপনার ফলাফল তৈরি হয়েছে​"
+       android:textColor="#FDA30A"
+       android:gravity="center"
+       android:textSize="30dp"
+       android:textStyle="bold"
+       android:layout_marginTop="25dp"
+       android:layout_gravity="center"
+       >
+
+   </TextView>
+   <TextView
+       android:id="@+id/text_footer"
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:text="আপনার পিন অথবা, মোবাইল নাম্বার ও বর্তমান ঠিকানার তথ্য পূরণ করুন, যেন পরবর্তিতে আমরা আপনাকে করোনা ভাইরাস (COVID-19) সংক্রান্ত প্রয়োজনীয় তথ্য প্রদান করতে পারি"
+       android:textColor="#FDA30A"
+       android:gravity="center"
+       android:textSize="15dp"
+       android:textStyle="bold"
+       android:layout_marginTop="15dp"
+       android:layout_gravity="center"
+       >
+
+   </TextView>
+
+   <ImageView
+       android:layout_width="wrap_content"
+       android:layout_height="200dp"
+       android:src="@drawable/homepage"
+       android:layout_gravity="center">
+   </ImageView>
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center"
+       android:gravity="center"
+       >
+
+      <EditText
+          android:id="@+id/editpin"
+          android:layout_width="150dp"
+          android:layout_height="50dp"
+          android:background="@drawable/edittext"
+          android:layout_marginTop="30dp"
+          android:layout_gravity="center"
+          android:textColor="#787375"
+          android:text="pin">
+
+      </EditText>
+
+      <EditText
+          android:id="@+id/editmobile"
+          android:layout_width="150dp"
+          android:layout_height="50dp"
+          android:background="@drawable/edittext"
+          android:layout_marginTop="30dp"
+          android:layout_marginLeft="20dp"
+          android:layout_gravity="center"
+          android:textColor="#787375"
+          android:text="pin">
+
+      </EditText>
+
+   </LinearLayout>
+   <LinearLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content"
+       android:layout_gravity="center">
+      <EditText
+          android:id="@+id/editaddress"
+          android:layout_width="150dp"
+          android:layout_height="50dp"
+          android:background="@drawable/edittext"
+          android:layout_marginTop="10dp"
+          android:layout_gravity="center"
+          android:textColor="#787375"
+          android:gravity="center"
+          android:text="mobile">
+
+      </EditText>
+
+
+   </LinearLayout>
+
+
+
+  <Button
+       android:id="@+id/angry_btn"
+
+       android:text="পরবর্তীতে যান"
+       android:textColor="#FFFFFF"
+       android:textSize="30sp"
+       android:layout_marginTop="25dp"
+       android:layout_width="240dp"
+       android:layout_height="50dp"
+       android:background="@drawable/buttonshape"
+       android:shadowColor="#A8A8A8"
+       android:shadowDx="0"
+       android:shadowDy="0"
+       android:shadowRadius="5"
+       android:layout_gravity="center"
+       />
+
+
+
+</LinearLayout>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FifthActivity"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="আপনি কি বিগত ১৪ দিনের ভিতরে বিদেশ হতে এসেছেন??"
+        android:textColor="#FDA30A"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        >
+
+    </TextView>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fifth"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center">
+    </ImageView>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="25dp">
+
+        <Button
+            android:id="@+id/angry_btn_yes"
+
+            android:text="হ্যাঁ"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_gravity="center"
+            />
+
+        <Button
+            android:id="@+id/angry_btn_no"
+
+            android:text="না"
+            android:textColor="#FFFFFF"
+            android:textSize="30sp"
+            android:layout_marginTop="5dp"
+            android:layout_width="125dp"
+            android:layout_height="50dp"
+            android:background="@drawable/buttonshape"
+            android:shadowColor="#A8A8A8"
+            android:shadowDx="0"
+            android:shadowDy="0"
+            android:shadowRadius="5"
+            android:layout_gravity="center"
+            android:layout_marginLeft="50dp"
+            />
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
