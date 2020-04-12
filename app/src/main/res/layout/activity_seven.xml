@@ -15,7 +15,7 @@
         android:text="বিগত ১৪ দিনে জ্বর, কাশি, শ্বাসকষ্ট আছে এমন কারোর সংস্পর্শে কি আপনি এসেছিলেন (পরিবার সদস্য / অফিস কলিগ)?"
         android:textColor="#FDA30A"
         android:gravity="center"
-        android:textSize="30dp"
+        android:textSize="25dp"
         android:textStyle="bold"
         android:layout_marginTop="50dp"
         android:layout_gravity="center"
@@ -38,7 +38,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_marginTop="25dp">
+   >
 
         <Button
             android:id="@+id/angry_btn_yes"

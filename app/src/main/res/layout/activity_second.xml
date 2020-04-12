@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
     android:orientation="vertical"
-    android:padding="50dp">
+    android:padding="20dp">
 
     <TextView
         android:id="@+id/text_header"
@@ -27,7 +27,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/third"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="40dp"
         android:layout_gravity="center">
     </ImageView>
 
@@ -44,7 +44,7 @@
             android:text="হ্যাঁ"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -61,7 +61,7 @@
             android:text="না"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="5dp"
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"

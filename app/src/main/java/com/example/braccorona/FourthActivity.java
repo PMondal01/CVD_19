@@ -7,36 +7,51 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class FourthActivity extends AppCompatActivity {
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+public class FourthActivity extends AppCompatActivity implements View.OnClickListener {
 
     private Button button_yes,button_no;
+    int fourth_ans=0;
+    DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fourth);
 
+        databaseReference= FirebaseDatabase.getInstance().getReference("fourth_response");
+
         button_yes=findViewById(R.id.angry_btn_yes);
         button_no=findViewById(R.id.angry_btn_no);
 
-        button_yes.setOnClickListener(new View.OnClickListener() {
+       button_yes.setOnClickListener(this);
+       button_no.setOnClickListener(this);
+    }
 
-            public void onClick(View v) {
+    @Override
+    public void onClick(View v) {
+        switch(v.getId()) {
+            case R.id.angry_btn_yes:
+                fourth_ans=1;
+                saveData();
                 Intent intent=new  Intent(FourthActivity.this, FifthActivity.class);
                 startActivity(intent);
-
-
-            }
-        });
-
-        button_no.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View v) {
-                Intent intent=new  Intent(FourthActivity.this, FifthActivity.class);
+                break;
+            case R.id.angry_btn_no:
+                fourth_ans=0;
+                saveData();
+                intent=new  Intent(FourthActivity.this, FifthActivity.class);
                 startActivity(intent);
+                break;
+        }
+    }
 
+    private void saveData() {
 
-            }
-        });
+        Fourth_response fourth_response=new Fourth_response(fourth_ans);
+        String key=databaseReference.push().getKey();
+        databaseReference.child(key).setValue(fourth_response);
     }
 }

@@ -9,12 +9,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EightActivity"></activity>
+        <activity android:name=".FinalActivity"></activity>
+        <activity android:name=".EightActivity" />
         <activity android:name=".SevenActivity" />
         <activity android:name=".SixthActivity" />
         <activity android:name=".FifthActivity" />
         <activity android:name=".FourthActivity" />
-        <activity android:name=".ResultActivity" />
+        <activity android:name=".UserinfoActivity" />
         <activity android:name=".ThirdActivity" />
         <activity android:name=".SecondActivity" />
         <activity android:name=".FirstActivity" />

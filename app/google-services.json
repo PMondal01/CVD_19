@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "550122977504",
+    "firebase_url": "https://braccorona.firebaseio.com",
+    "project_id": "braccorona",
+    "storage_bucket": "braccorona.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:550122977504:android:150f5ace27644d3e603885",
+        "android_client_info": {
+          "package_name": "com.example.braccorona"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "550122977504-o4kfuk8jcspcf8bfd118mhoh15rhcmpv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.braccorona",
+            "certificate_hash": "edb77f9d25524041678bc2e884d620f2645dc2c1"
+          }
+        },
+        {
+          "client_id": "550122977504-vcv6ejk2bg0ir63r8qs7n7ievfredjbu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDd2JkSL6Ce66XvAsRTrZCFvwImV_3qhRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "550122977504-vcv6ejk2bg0ir63r8qs7n7ievfredjbu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
