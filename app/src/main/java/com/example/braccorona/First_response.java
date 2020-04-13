@@ -1,11 +1,11 @@
 package com.example.braccorona;
 
-public class Age {
+public class First_response {
 
     private String Age;
 
 
-    public Age(String age) {
+    public First_response(String age) {
         Age = age;
 
     }

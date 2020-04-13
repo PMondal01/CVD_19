@@ -4,6 +4,11 @@ public class UserInfo {
 
     private String pin,mobile,address;
 
+    public UserInfo()
+    {
+
+    }
+
     public UserInfo(String pin, String mobile, String address) {
         this.pin = pin;
         this.mobile = mobile;

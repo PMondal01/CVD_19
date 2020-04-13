@@ -36,7 +36,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:gravity="center">
+        android:gravity="center"
+     >
 
         <Button
             android:id="@+id/angry_btn_yes"
@@ -53,6 +54,7 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:layout_gravity="center"
+
             />
 
         <Button
@@ -72,6 +74,14 @@
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
             />
+
+
+
+        <TextView
+            android:id="@+id/textload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+        </TextView>
 
 
 
