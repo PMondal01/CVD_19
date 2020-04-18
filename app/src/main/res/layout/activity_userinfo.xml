@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -29,27 +29,34 @@
        android:text="আপনার পিন অথবা, মোবাইল নাম্বার ও বর্তমান ঠিকানার তথ্য পূরণ করুন, যেন পরবর্তিতে আমরা আপনাকে করোনা ভাইরাস (COVID-19) সংক্রান্ত প্রয়োজনীয় তথ্য প্রদান করতে পারি"
        android:textColor="#A6A4A0"
        android:gravity="center"
-       android:textSize="15dp"
+       android:textSize="13dp"
        android:textStyle="bold"
        android:layout_marginTop="15dp"
        android:layout_gravity="center"
+       android:layout_below="@id/text_header"
+
        >
 
    </TextView>
 
    <ImageView
+       android:id="@+id/image"
        android:layout_width="wrap_content"
-       android:layout_height="200dp"
+       android:layout_height="wrap_content"
        android:src="@drawable/homepage"
-       android:layout_gravity="center">
+       android:layout_gravity="center"
+       android:layout_centerHorizontal="true"
+       android:layout_centerVertical="true">
    </ImageView>
 
 
    <LinearLayout
+       android:id="@+id/linear"
        android:layout_width="match_parent"
        android:layout_height="wrap_content"
        android:layout_gravity="center"
        android:gravity="center"
+       android:layout_below="@id/image"
        >
 
       <EditText
@@ -57,10 +64,10 @@
           android:layout_width="150dp"
           android:layout_height="50dp"
           android:background="@drawable/edittext"
-          android:layout_marginTop="30dp"
+          android:layout_marginTop="10dp"
           android:layout_gravity="center"
           android:textColor="#787375"
-          android:text="pin">
+          android:hint="pin">
 
       </EditText>
 
@@ -69,11 +76,11 @@
           android:layout_width="150dp"
           android:layout_height="50dp"
           android:background="@drawable/edittext"
-          android:layout_marginTop="30dp"
+          android:layout_marginTop="10dp"
           android:layout_marginLeft="20dp"
           android:layout_gravity="center"
           android:textColor="#787375"
-          android:text="mobile">
+          android:hint="mobile">
 
       </EditText>
 
@@ -81,17 +88,19 @@
    <LinearLayout
        android:layout_width="wrap_content"
        android:layout_height="wrap_content"
-       android:layout_gravity="center">
+       android:layout_gravity="center"
+       android:layout_below="@id/linear"
+       android:layout_centerHorizontal="true">
       <EditText
           android:id="@+id/editaddress"
           android:layout_width="150dp"
           android:layout_height="50dp"
           android:background="@drawable/edittext"
-          android:layout_marginTop="10dp"
+          android:layout_marginTop="5dp"
           android:layout_gravity="center"
           android:textColor="#787375"
           android:gravity="center"
-          android:text="address">
+          android:hint="address">
 
       </EditText>
 
@@ -102,11 +111,10 @@
 
   <Button
        android:id="@+id/angry_btn"
-
        android:text="পরবর্তীতে যান"
        android:textColor="#FFFFFF"
        android:textSize="30sp"
-       android:layout_marginTop="25dp"
+       android:layout_alignParentBottom="true"
        android:layout_width="240dp"
        android:layout_height="50dp"
        android:background="@drawable/buttonshape"
@@ -115,10 +123,12 @@
        android:shadowDy="0"
        android:shadowRadius="5"
        android:layout_gravity="center"
+       android:layout_centerHorizontal="true"
+      android:layout_marginTop="5dp"
        />
 
 
 
 
 
-</LinearLayout>
+</RelativeLayout>

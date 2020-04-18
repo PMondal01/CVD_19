@@ -16,24 +16,17 @@ public class SevenActivity extends AppCompatActivity implements View.OnClickList
 
     private Button button_yes,button_no;
     int seventh_ans;
-  //  DatabaseReference databaseReference;
     MyPreferences myPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_seven);
-     //   databaseReference= FirebaseDatabase.getInstance().getReference("seventh_response");
-
         myPreferences=MyPreferences.getPreferences(this);
-
         button_yes=findViewById(R.id.angry_btn_yes);
         button_no=findViewById(R.id.angry_btn_no);
-
         button_yes.setOnClickListener(this);
         button_no.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -41,26 +34,16 @@ public class SevenActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()) {
             case R.id.angry_btn_yes:
                 seventh_ans=1;
-             //   saveData();
                 myPreferences.setSeven(seventh_ans);
-                Intent intent=new  Intent(SevenActivity.this, EightActivity.class);
+                Intent intent=new  Intent(SevenActivity.this, UserinfoActivity.class);
                 startActivity(intent);
                 break;
             case R.id.angry_btn_no:
                 seventh_ans=0;
-              //  saveData();
                 myPreferences.setSeven(seventh_ans);
-                intent=new  Intent(SevenActivity.this, EightActivity.class);
+                intent=new  Intent(SevenActivity.this, UserinfoActivity.class);
                 startActivity(intent);
                 break;
         }
     }
-
-  /*  private void saveData() {
-
-        Seventh_response  seventh_response=new Seventh_response(seventh_ans);
-        String key=databaseReference.push().getKey();
-        databaseReference.child(key).setValue(seventh_response);
-
-    }*/
 }

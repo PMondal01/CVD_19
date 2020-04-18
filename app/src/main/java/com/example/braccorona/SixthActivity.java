@@ -16,23 +16,18 @@ public class SixthActivity extends AppCompatActivity implements View.OnClickList
 
     private Button button_yes,button_no;
     int sixth_ans;
-  //  DatabaseReference databaseReference;
     MyPreferences myPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sixth);
-      //  databaseReference= FirebaseDatabase.getInstance().getReference("sixth_response");
         myPreferences=MyPreferences.getPreferences(this);
 
         button_yes=findViewById(R.id.angry_btn_yes);
         button_no=findViewById(R.id.angry_btn_no);
-
         button_yes.setOnClickListener(this);
         button_no.setOnClickListener(this);
-
-
     }
 
     @Override
@@ -40,27 +35,16 @@ public class SixthActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()) {
             case R.id.angry_btn_yes:
                 sixth_ans=1;
-            //    saveData();
                myPreferences.setSixth(sixth_ans);
                 Intent intent=new  Intent(SixthActivity.this, SevenActivity.class);
                 startActivity(intent);
                 break;
             case R.id.angry_btn_no:
                 sixth_ans=0;
-              //  saveData();
                 myPreferences.setSixth(sixth_ans);
                 intent=new  Intent(SixthActivity.this, SevenActivity.class);
                 startActivity(intent);
                 break;
         }
-
     }
-
-   /* private void saveData() {
-
-        Sixth_response sixth_response=new Sixth_response(sixth_ans);
-        String key=databaseReference.push().getKey();
-        databaseReference.child(key).setValue(sixth_response);
-
-    }*/
 }

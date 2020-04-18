@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".SecondActivity"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="20dp"
+    >
 
     <TextView
         android:id="@+id/text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আপনার কি জ্বর আছে বা জ্বরজ্বর অনুভব করছেন?"
+        android:text="আপনার কি জ্বর/ কাশি/ গলাব্যথা আছে?"
         android:textColor="#FDA30A"
         android:gravity="center"
         android:textSize="30dp"
@@ -24,28 +25,23 @@
     </TextView>
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/third"
-        android:layout_marginTop="40dp"
-        android:layout_gravity="center">
+        android:src="@drawable/second"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
     </ImageView>
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_gravity="center"
-        android:gravity="center"
-     >
-
         <Button
             android:id="@+id/angry_btn_yes"
-
             android:text="হ্যাঁ"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="50dp"
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -54,16 +50,17 @@
             android:shadowDy="0"
             android:shadowRadius="5"
             android:layout_gravity="center"
+            android:layout_below="@id/image"
+            android:layout_marginLeft="30dp"
 
             />
 
         <Button
             android:id="@+id/angry_btn_no"
-
             android:text="না"
             android:textColor="#FFFFFF"
             android:textSize="30sp"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="50dp"
             android:layout_width="125dp"
             android:layout_height="50dp"
             android:background="@drawable/buttonshape"
@@ -73,21 +70,8 @@
             android:shadowRadius="5"
             android:layout_gravity="center"
             android:layout_marginLeft="50dp"
+            android:layout_toRightOf="@id/angry_btn_yes"
+            android:layout_below="@id/image"
             />
 
-
-
-        <TextView
-            android:id="@+id/textload"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-        </TextView>
-
-
-
-
-    </LinearLayout>
-
-
-
-</LinearLayout>
+</RelativeLayout>

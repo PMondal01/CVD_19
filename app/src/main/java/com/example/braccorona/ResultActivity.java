@@ -15,8 +15,8 @@ public class ResultActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
 
-
         myPreferences=MyPreferences.getPreferences(this);
+
         textView_1=findViewById(R.id.age);
         textView_2=findViewById(R.id.first);
         textView_3=findViewById(R.id.second);
@@ -28,11 +28,6 @@ public class ResultActivity extends AppCompatActivity {
         textView_p=findViewById(R.id.pin);
         textView_m=findViewById(R.id.mobile);
         textView_a=findViewById(R.id.address);
-
-
-       /* int value=  myPreferences.getSecond();
-        int age=myPreferences.getAge();
-        textView.setText(String.valueOf(age));*/
 
         int age=myPreferences.getAge();
         //textView_1.setText(age);
@@ -56,8 +51,8 @@ public class ResultActivity extends AppCompatActivity {
         int sev=myPreferences.getSeven();
         textView_7.setText(String.valueOf(sev));
 
-        int eight=myPreferences.getEight();
-        textView_8.setText(String.valueOf(eight));
+     //   int eight=myPreferences.getEight();
+     //   textView_8.setText(String.valueOf(eight));
 
         String pin=myPreferences.getPin();
         textView_p.setText(String.valueOf(pin));
@@ -67,8 +62,6 @@ public class ResultActivity extends AppCompatActivity {
 
         String add=myPreferences.getAddress();
         textView_a.setText(String.valueOf(add));
-
-
 
     }
 }

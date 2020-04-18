@@ -19,15 +19,10 @@ public class FirstActivity extends AppCompatActivity {
     private EditText editText;
     private Button button;
     MyPreferences myPreferences;
-   // DatabaseReference databaseReference;
-
-
-    //FIREBASE
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
 
-      //  databaseReference= FirebaseDatabase.getInstance().getReference("first_response");
         myPreferences=MyPreferences.getPreferences(this);
         setContentView(R.layout.activity_first);
 
@@ -41,29 +36,10 @@ public class FirstActivity extends AppCompatActivity {
                 saveData();
                 startActivity(intent);
             }
-
-
-
             private void saveData() {
-
             int age=Integer.parseInt(editText.getText().toString().trim());
-            //WRITE DATA
                 myPreferences.setAge(age);
-
-                 /*   SharedPreferences sharedPreferences = getSharedPreferences("user_Response", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("age", age);
-                    editor.commit();
-                    editText.setText("");*/
-
-                    // String key=databaseReference.push().getKey();
-                    //  First_response first_response=new First_response(age);
-                    // databaseReference.child(key).setValue(first_response);
                 }
-
-
         });
-
-
     }
 }

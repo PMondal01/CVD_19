@@ -19,14 +19,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         button=findViewById(R.id.angry_btn);
         textView_H=findViewById(R.id.text_header);
         textView_F=findViewById(R.id.text_footer);
-
         typeface_H=Typeface.createFromAsset(getAssets(),"font/kalpurush _ANSI.ttf");
         textView_H.setTypeface(typeface_H);
-
         typeface_F=Typeface.createFromAsset(getAssets(),"font/kalpurush _ANSI.ttf");
         textView_F.setTypeface(typeface_F);
 
@@ -35,12 +32,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent=new  Intent(MainActivity.this, FirstActivity.class);
                 startActivity(intent);
-
-
             }
         });
-
-
-
     }
 }

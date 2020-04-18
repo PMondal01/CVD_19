@@ -15,7 +15,7 @@ public class MyPreferences {
         editor.apply();
     }
 
-    public MyPreferences(int age, int s, int t, int four, int fifth, int six, int sev, int eight, String pin_no, String mob, String add) {
+    public MyPreferences(int age, int s, int t, int four, int fifth, int six, int sev,String pin_no, String mob, String add) {
     }
 
     public static MyPreferences getPreferences(Context context) {
@@ -82,13 +82,13 @@ public class MyPreferences {
         return sharedPreferences.getInt("seventh_ans", -1); //if user's age not found then it'll return -1
     }
 
-    public int getEight(){
+   /* public int getEight(){
         return sharedPreferences.getInt("eighth_ans", -1); //if user's age not found then it'll return -1
     }
     public void setEight(int eighth_ans){
         editor.putInt("eighth_ans", eighth_ans);
         editor.apply();
-    }
+    }*/
 
     public String getPin(){
         return sharedPreferences.getString("pin", null); //if user's age not found then it'll return -1

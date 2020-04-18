@@ -16,7 +16,6 @@ public class FifthActivity extends AppCompatActivity implements View.OnClickList
 
     private Button button_yes,button_no;
     int fifth_ans;
-  //  DatabaseReference databaseReference;
     MyPreferences myPreferences;
 
     @Override
@@ -24,11 +23,9 @@ public class FifthActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fifth);
 
-   //     databaseReference= FirebaseDatabase.getInstance().getReference("fifth_response");
         myPreferences=MyPreferences.getPreferences(this);
         button_yes=findViewById(R.id.angry_btn_yes);
         button_no=findViewById(R.id.angry_btn_no);
-
         button_yes.setOnClickListener(this);
         button_no.setOnClickListener(this);
     }
@@ -38,34 +35,16 @@ public class FifthActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()) {
             case R.id.angry_btn_yes:
                 fifth_ans=1;
-               // saveData();
-               /* SharedPreferences sharedPreferences = getSharedPreferences("user_Response", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putInt("fifth_ans", fifth_ans);
-                editor.apply();*/
-               myPreferences.setFifth(fifth_ans);
-
+                myPreferences.setFifth(fifth_ans);
                 Intent intent=new  Intent(FifthActivity.this, SixthActivity.class);
                 startActivity(intent);
                 break;
             case R.id.angry_btn_no:
                 fifth_ans=0;
-             //   saveData();
-              /*  sharedPreferences = getSharedPreferences("user_Response", Context.MODE_PRIVATE);
-                SharedPreferences.Editor editor1 = sharedPreferences.edit();
-                editor1.putInt("fifth_ans", fifth_ans);
-                editor1.apply();*/
                 myPreferences.setFifth(fifth_ans);
                 intent=new  Intent(FifthActivity.this, SixthActivity.class);
                 startActivity(intent);
                 break;
         }
     }
-
-  /*  private void saveData() {
-
-        Fifth_response fifth_response=new Fifth_response(fifth_ans);
-        String key=databaseReference.push().getKey();
-        databaseReference.child(key).setValue(fifth_response);
-    }*/
 }

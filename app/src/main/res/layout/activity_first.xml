@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -17,18 +17,23 @@
         android:gravity="center"
         android:textSize="30dp"
         android:textStyle="bold"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="100dp"
         android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
         >
 
     </TextView>
 
     <ImageView
+        android:id="@+id/image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/first"
-        android:layout_marginTop="100dp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_below="@id/text_header"
+        android:layout_marginTop="70dp">
     </ImageView>
 
     <EditText
@@ -36,10 +41,11 @@
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:background="@drawable/edittext"
-        android:layout_marginTop="100dp"
+        android:layout_marginTop="70dp"
         android:layout_gravity="center"
-
-        android:textColor="#787375">
+        android:layout_below="@id/image"
+        android:textColor="#787375"
+        android:layout_centerHorizontal="true">
 
     </EditText>
 
@@ -58,6 +64,8 @@
         android:shadowDy="0"
         android:shadowRadius="5"
         android:layout_gravity="center"
+        android:layout_below="@id/edittext"
+        android:layout_centerHorizontal="true"
         />
 
-</LinearLayout>
+</RelativeLayout>

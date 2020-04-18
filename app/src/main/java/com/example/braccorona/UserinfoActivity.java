@@ -30,15 +30,45 @@ public class UserinfoActivity extends AppCompatActivity  {
         editText_mobile=findViewById(R.id.editmobile);
         editText_address=findViewById(R.id.editaddress);
 
-
-
-
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent=new  Intent(UserinfoActivity.this, ResultActivity.class);
+               // Intent intent=new  Intent(UserinfoActivity.this, ResultActivity.class);
                 saveData();
+                int age=myPreferences.getAge();
+                int second=myPreferences.getSecond();
+                int third=myPreferences.getThird();
+                int four=myPreferences.getFourth();
+                int fifth=myPreferences.getFifth();
+                int six=myPreferences.getSixth();
+                int seven=myPreferences.getSeven();
+              //  int eight=myPreferences.getEight();
+                int total=second+third+four+fifth+six+seven;
 
-                startActivity(intent);
+                if(age<55){
+                    age=0;
+                }else {
+                    age=1;
+                }
+
+              /*  int second_third;
+                if (second==0 && third==0) {
+                   second_third=0;
+                } else if (time < 20) {
+                    System.out.println("Good day.");
+                } else {
+                    System.out.println("Good evening.");
+                }*/
+
+                if(total>=4)
+                {
+                    Intent intent = new Intent(UserinfoActivity.this, SickActivity.class);
+                    startActivity(intent);
+                }
+                else {
+                    Intent intent = new Intent(UserinfoActivity.this, HealthyActivity.class);
+                    startActivity(intent);
+                }
+               // startActivity(intent);
             }
 
             private void saveData() {
@@ -49,7 +79,6 @@ public class UserinfoActivity extends AppCompatActivity  {
                 myPreferences.setPin(pin);
                 myPreferences.setMobile(mobile);
                 myPreferences.setAddress(address);
-
                 editText_pin.setText("");
                 editText_mobile.setText("");
                 editText_address.setText("");
@@ -61,24 +90,16 @@ public class UserinfoActivity extends AppCompatActivity  {
                 int fifth=myPreferences.getFifth();
                 int six=myPreferences.getSixth();
                 int seven=myPreferences.getSeven();
-                int eight=myPreferences.getEight();
+              //  int eight=myPreferences.getEight();
                 String pin_no=myPreferences.getPin();
                 String mob=myPreferences.getMobile();
                 String add=myPreferences.getAddress();
 
                 String key=databaseReference.push().getKey();
-                MyPreferences myPreferences=new MyPreferences(age,second,third,four,fifth,six,seven,eight,pin_no,mob,add);
+                MyPreferences myPreferences=new MyPreferences(age,second,third,four,fifth,six,seven,pin_no,mob,add);
                 databaseReference.child(key).setValue(myPreferences);
-
-            //   UserInfo userInfo= new UserInfo(pin,mobile,address);
-
-
-
-
-                    // String key=databaseReference.push().getKey();
-                    //  First_response first_response=new First_response(age);
-                    // databaseReference.child(key).setValue(first_response);
                 }
+
 
         });
     }

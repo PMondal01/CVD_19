@@ -16,7 +16,6 @@ public class EightActivity extends AppCompatActivity implements View.OnClickList
 
     private Button button_yes,button_no;
     int eighth_ans;
-  //  DatabaseReference databaseReference;
     MyPreferences myPreferences;
 
     @Override
@@ -25,11 +24,8 @@ public class EightActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_eight);
         myPreferences=MyPreferences.getPreferences(this);
 
-      //  databaseReference= FirebaseDatabase.getInstance().getReference("eighth_response");
-
         button_yes=findViewById(R.id.angry_btn_yes);
         button_no=findViewById(R.id.angry_btn_no);
-
         button_yes.setOnClickListener(this);
         button_no.setOnClickListener(this);
     }
@@ -40,26 +36,15 @@ public class EightActivity extends AppCompatActivity implements View.OnClickList
         switch(v.getId()) {
             case R.id.angry_btn_yes:
                 eighth_ans=1;
-              //  saveData();
-                myPreferences.setEight(eighth_ans);
                 Intent intent=new  Intent(EightActivity.this, UserinfoActivity.class);
                 startActivity(intent);
                 break;
             case R.id.angry_btn_no:
                 eighth_ans=0;
-                myPreferences.setEight(eighth_ans);
-               // saveData();
                 intent=new  Intent(EightActivity.this, UserinfoActivity.class);
                 startActivity(intent);
                 break;
         }
 
     }
-
-  /*  private void saveData() {
-
-        Eighth_response eighth_response=new Eighth_response(eighth_ans);
-        String key=databaseReference.push().getKey();
-        databaseReference.child(key).setValue(eighth_response);
-    }*/
 }

@@ -12,7 +12,7 @@
         android:id="@+id/text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আপনি কি বিগত ১৪ দিনের ভিতরে বিদেশ হতে এসেছেন??"
+        android:text="আপনার প্রতিবেশী বা এলাকার কোন ব্যক্তি কি করোনা ভাইরাসে আক্রান্ত ?"
         android:textColor="#FDA30A"
         android:gravity="center"
         android:textSize="30dp"
