@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
-public class ResultActivity extends AppCompatActivity {
+public class ResultActivity_optional extends AppCompatActivity {
 
     TextView textView_1,textView_2,textView_3,textView_4,textView_5,textView_6,textView_7,textView_8,textView_9,textView_p,textView_m,textView_a;
     MyPreferences myPreferences;

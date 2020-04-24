@@ -32,7 +32,6 @@ public class UserinfoActivity extends AppCompatActivity  {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-               // Intent intent=new  Intent(UserinfoActivity.this, ResultActivity.class);
                 saveData();
                 int age=myPreferences.getAge();
                 int second=myPreferences.getSecond();
@@ -41,23 +40,45 @@ public class UserinfoActivity extends AppCompatActivity  {
                 int fifth=myPreferences.getFifth();
                 int six=myPreferences.getSixth();
                 int seven=myPreferences.getSeven();
-              //  int eight=myPreferences.getEight();
                 int total=second+third+four+fifth+six+seven;
-
+                //age
+                int age_value=0;
                 if(age<55){
-                    age=0;
+                    age_value=0;
                 }else {
-                    age=1;
+                    age_value=1;
+                }
+                //symptom
+                int q2q3_value=0;
+                if (second==0 && third==0) {
+                        q2q3_value=0;
+                } else if (second==0 && third==1) {
+                        q2q3_value=2;
+                } else if (second==1 && third==0){
+                        q2q3_value=2;
+                }else {
+                        q2q3_value=2;
+                }
+                //Epidomik
+                int q4q5_value=0;
+                if (four==0 && fifth==0) {
+                    q4q5_value=0;
+                } else if (four==0 && fifth==1) {
+                    q4q5_value=1;
+                } else if (four==1 && fifth==0){
+                    q4q5_value=2;
+                }else {
+                    q4q5_value=2;
+                }
+                //history
+                int history_value=0;
+                if(seven==0){
+                    history_value=0;
+                }else {
+                    history_value=1;
                 }
 
-              /*  int second_third;
-                if (second==0 && third==0) {
-                   second_third=0;
-                } else if (time < 20) {
-                    System.out.println("Good day.");
-                } else {
-                    System.out.println("Good evening.");
-                }*/
+
 
                 if(total>=4)
                 {
@@ -68,7 +89,7 @@ public class UserinfoActivity extends AppCompatActivity  {
                     Intent intent = new Intent(UserinfoActivity.this, HealthyActivity.class);
                     startActivity(intent);
                 }
-               // startActivity(intent);
+
             }
 
             private void saveData() {

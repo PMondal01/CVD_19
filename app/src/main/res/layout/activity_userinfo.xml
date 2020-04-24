@@ -67,7 +67,8 @@
           android:layout_marginTop="10dp"
           android:layout_gravity="center"
           android:textColor="#787375"
-          android:hint="pin">
+          android:hint="pin"
+          android:inputType="number">
 
       </EditText>
 
@@ -80,7 +81,8 @@
           android:layout_marginLeft="20dp"
           android:layout_gravity="center"
           android:textColor="#787375"
-          android:hint="mobile">
+          android:hint="mobile"
+          android:inputType="phone">
 
       </EditText>
 
