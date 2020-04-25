@@ -15,7 +15,7 @@ public class MyPreferences {
         editor.apply();
     }
 
-    public MyPreferences(int age, int s, int t, int four, int fifth, int six, int sev,String pin_no, String mob, String add) {
+    public MyPreferences(int age, int s, int t, int four, int fifth, int six, int sev, String pin_no, String mob, String add,Float param_latitude,Float param_longitude,String location) {
     }
 
     public static MyPreferences getPreferences(Context context) {
@@ -111,6 +111,32 @@ public class MyPreferences {
     }
     public void setAddress(String address){
         editor.putString("address",address);
+        editor.apply();
+    }
+
+    //location
+
+    public float getlatitude(){
+        return sharedPreferences.getFloat("latitude", 0); //if user's age not found then it'll return -1
+    }
+    public void setlatitude(Float latitude){
+        editor.putFloat("latitude",latitude);
+        editor.apply();
+    }
+
+    public float getlongitude(){
+        return sharedPreferences.getFloat("longitude", 0); //if user's age not found then it'll return -1
+    }
+    public void setlongitude(Float longitude){
+        editor.putFloat("longitude",longitude);
+        editor.apply();
+    }
+
+    public String getlocation(){
+        return sharedPreferences.getString("location", null); //if user's age not found then it'll return -1
+    }
+    public void setlocation(String location){
+        editor.putString("location",location);
         editor.apply();
     }
 

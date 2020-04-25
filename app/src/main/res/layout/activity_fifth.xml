@@ -12,7 +12,7 @@
         android:id="@+id/text_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="আপনার প্রতিবেশী বা এলাকার কোন ব্যক্তি কি করোনা ভাইরাসে আক্রান্ত ?"
+        android:text="আপনার পরিবারের কোন সদস্য কি জ্বর, কাশি, বা শ্বাসকষ্টে আক্রান্ত?"
         android:textColor="#FDA30A"
         android:gravity="center"
         android:textSize="30dp"

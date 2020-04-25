@@ -1,22 +1,41 @@
 package com.example.braccorona;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdateFactory;
+import com.google.android.gms.maps.GoogleMap;
+import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.MarkerOptions;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class UserinfoActivity extends AppCompatActivity  {
+public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private Button button;
     private EditText editText_pin,editText_mobile,editText_address;
     DatabaseReference databaseReference;
     MyPreferences myPreferences;
+    FusedLocationProviderClient fusedLocationProviderClient;
+    private static final int REQUEST_CODE=101;
+    Location currentLocation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +48,23 @@ public class UserinfoActivity extends AppCompatActivity  {
         editText_pin=findViewById(R.id.editpin);
         editText_mobile=findViewById(R.id.editmobile);
         editText_address=findViewById(R.id.editaddress);
+        fusedLocationProviderClient= LocationServices.getFusedLocationProviderClient(this);
 
+        //getCurrentlocation
+            if ( ContextCompat.checkSelfPermission( this, android.Manifest.permission.ACCESS_COARSE_LOCATION ) != PackageManager.PERMISSION_GRANTED ) {
+
+                ActivityCompat.requestPermissions( this, new String[] {  android.Manifest.permission.ACCESS_COARSE_LOCATION  },
+                        REQUEST_CODE);
+            }
+            Task<Location> task=fusedLocationProviderClient.getLastLocation();
+            task.addOnSuccessListener(new OnSuccessListener<Location>() {
+                @Override
+                public void onSuccess(Location location) {
+                    if(location!=null){
+                        currentLocation=location;
+                    }
+                }
+            });
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 saveData();
@@ -41,6 +76,7 @@ public class UserinfoActivity extends AppCompatActivity  {
                 int six=myPreferences.getSixth();
                 int seven=myPreferences.getSeven();
                 int total=second+third+four+fifth+six+seven;
+                //all questions
                 //age
                 int age_value=0;
                 if(age<55){
@@ -72,14 +108,17 @@ public class UserinfoActivity extends AppCompatActivity  {
                 }
                 //history
                 int history_value=0;
-                if(seven==0){
+                if(six==0){
                     history_value=0;
                 }else {
                     history_value=1;
                 }
-
-
-
+                int medical_worker;
+                if(seven==0){
+                    medical_worker=0;
+                }else {
+                    medical_worker=1;
+                }
                 if(total>=4)
                 {
                     Intent intent = new Intent(UserinfoActivity.this, SickActivity.class);
@@ -93,6 +132,7 @@ public class UserinfoActivity extends AppCompatActivity  {
             }
 
             private void saveData() {
+
                 String pin=editText_pin.getText().toString().trim();
                 String mobile=editText_mobile.getText().toString().trim();
                 String address=editText_address.getText().toString().trim();
@@ -115,14 +155,49 @@ public class UserinfoActivity extends AppCompatActivity  {
                 String pin_no=myPreferences.getPin();
                 String mob=myPreferences.getMobile();
                 String add=myPreferences.getAddress();
+                //location pass
+                Double latitude= currentLocation.getLatitude();
+                float float_latitude = latitude.floatValue();
+                Double longitude=  currentLocation.getLongitude();
+                float float_longitude = longitude.floatValue();
+                myPreferences.setlatitude(float_latitude);
+                Float param_latitude= myPreferences.getlatitude();
+                myPreferences.setlongitude(float_longitude);
+                Float param_longitude=myPreferences.getlongitude();
 
+                Location mylocation=currentLocation;
+                String string_location=mylocation.toString();
+                myPreferences.setlocation(string_location);
+                String location=myPreferences.getlocation();
+                //firebase
                 String key=databaseReference.push().getKey();
-                MyPreferences myPreferences=new MyPreferences(age,second,third,four,fifth,six,seven,pin_no,mob,add);
+                MyPreferences myPreferences=new MyPreferences(age,second,third,four,fifth,six,seven,pin_no,mob,add,param_latitude,param_longitude,location);
+                assert key != null;
                 databaseReference.child(key).setValue(myPreferences);
                 }
-
-
         });
+
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode){
+            case REQUEST_CODE:
+                if(grantResults.length>0 && grantResults[0]==PackageManager.PERMISSION_GRANTED);
+                break;
+        }
+
+    }
+
+    @Override
+    public void onMapReady(GoogleMap googleMap) {
+        LatLng latLng=new LatLng(currentLocation.getLatitude(),currentLocation.getLongitude());
+        MarkerOptions markerOptions=new MarkerOptions().position(latLng)
+                .title("Current Location");
+
+        googleMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+        googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng,5));
+        googleMap.addMarker(markerOptions);
     }
 }
 
