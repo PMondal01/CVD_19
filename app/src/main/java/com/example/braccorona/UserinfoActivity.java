@@ -437,43 +437,39 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                     output=12;
                 }
 
-                //resultactivity
-                if(output==0)
+
+                if (editText_pin.getText().toString().trim().length() > 0 && editText_mobile.getText().toString().trim().length()>0 && editText_mobile.getText().toString().trim().length()>0 )
+
                 {
-                    Intent intent = new Intent(UserinfoActivity.this, ResultZeroActivity.class);
-                    startActivity(intent);
-                }else if (output==1){
-                    Intent intent = new Intent(UserinfoActivity.this, ResultOneActivity.class);
-                    startActivity(intent);
-                }else if (output==2){
-                    Intent intent = new Intent(UserinfoActivity.this, ResultTwoActivity.class);
-                    startActivity(intent);
-                }else if (output==3){
-                    Intent intent = new Intent(UserinfoActivity.this, ResultThreeActivity.class);
-                    startActivity(intent);
-                }else if (output==4){
-                    Intent intent = new Intent(UserinfoActivity.this, ResultFourActivity.class);
-                    startActivity(intent);
-                }else if (output==5){
-                    Intent intent = new Intent(UserinfoActivity.this, ResultFiveActivity.class);
-                    startActivity(intent);
-                }else if (output==6){
-                    Intent intent = new Intent(UserinfoActivity.this, ResultSixActivity.class);
-                    startActivity(intent);
+                    //resultactivity
+                    if(output==0)
+                    {
+                        Intent intent = new Intent(UserinfoActivity.this, ResultZeroActivity.class);
+                        startActivity(intent);
+                    }else if (output==1){
+                        Intent intent = new Intent(UserinfoActivity.this, ResultOneActivity.class);
+                        startActivity(intent);
+                    }else if (output==2){
+                        Intent intent = new Intent(UserinfoActivity.this, ResultTwoActivity.class);
+                        startActivity(intent);
+                    }else if (output==3){
+                        Intent intent = new Intent(UserinfoActivity.this, ResultThreeActivity.class);
+                        startActivity(intent);
+                    }else if (output==4){
+                        Intent intent = new Intent(UserinfoActivity.this, ResultFourActivity.class);
+                        startActivity(intent);
+                    }else if (output==5){
+                        Intent intent = new Intent(UserinfoActivity.this, ResultFiveActivity.class);
+                        startActivity(intent);
+                    }else if (output==6){
+                        Intent intent = new Intent(UserinfoActivity.this, ResultSixActivity.class);
+                        startActivity(intent);
+                    }
+
+                }else {
+                    Toast.makeText(UserinfoActivity.this,
+                            "Enter your information", Toast.LENGTH_LONG).show();
                 }
-
-
-
-
-                /*if(total>=4)
-                {
-                    Intent intent = new Intent(UserinfoActivity.this, SickActivity.class);
-                    startActivity(intent);
-                }
-                else {
-                    Intent intent = new Intent(UserinfoActivity.this, HealthyActivity.class);
-                    startActivity(intent);
-                }*/
 
             }
 
@@ -482,7 +478,6 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 String pin=editText_pin.getText().toString().trim();
                 String mobile=editText_mobile.getText().toString().trim();
                 String address=editText_address.getText().toString().trim();
-
                 myPreferences.setPin(pin);
                 myPreferences.setMobile(mobile);
                 myPreferences.setAddress(address);

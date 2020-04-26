@@ -31,8 +31,6 @@ public class FirstActivity extends AppCompatActivity {
         editText=findViewById(R.id.edittext);
         button=findViewById(R.id.angry_btn);
 
-
-
         button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
@@ -40,15 +38,14 @@ public class FirstActivity extends AppCompatActivity {
                 Intent intent=new  Intent(FirstActivity.this, SecondActivity.class);
 
 
-                if(editText !=null){
+                if (editText.getText().toString().trim().length() > 0){
                     int age=Integer.parseInt(editText.getText().toString().trim());
                     myPreferences.setAge(age);
+                    startActivity(intent);
                 }else {
                     Toast.makeText(FirstActivity.this,
                             "Enter your age", Toast.LENGTH_LONG).show();
                 }
-
-                startActivity(intent);
             }
         });
     }

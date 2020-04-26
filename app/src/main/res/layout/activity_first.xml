@@ -46,7 +46,8 @@
         android:layout_below="@id/image"
         android:textColor="#787375"
         android:layout_centerHorizontal="true"
-        android:inputType="number">
+        android:inputType="number"
+        >
 
     </EditText>
 
