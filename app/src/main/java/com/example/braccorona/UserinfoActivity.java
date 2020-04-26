@@ -79,7 +79,7 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 //all questions
                 //age
                 int age_value=0;
-                if(age<55){
+                if(age<=55){
                     age_value=0;
                 }else {
                     age_value=1;
@@ -437,9 +437,14 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                     output=12;
                 }
 
-
-                if (editText_pin.getText().toString().trim().length() > 0 && editText_mobile.getText().toString().trim().length()>0 && editText_mobile.getText().toString().trim().length()>0 )
-
+                String pin=editText_pin.getText().toString().trim();
+                String mobile=editText_mobile.getText().toString().trim();
+                String address=editText_address.getText().toString().trim();
+                if (pin.equals("") || mobile.equals("") || address.length()==0)
+                {
+                    Toast.makeText(UserinfoActivity.this,
+                            "Enter your information", Toast.LENGTH_LONG).show();
+                }else
                 {
                     //resultactivity
                     if(output==0)
@@ -466,9 +471,6 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                         startActivity(intent);
                     }
 
-                }else {
-                    Toast.makeText(UserinfoActivity.this,
-                            "Enter your information", Toast.LENGTH_LONG).show();
                 }
 
             }
@@ -481,9 +483,9 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 myPreferences.setPin(pin);
                 myPreferences.setMobile(mobile);
                 myPreferences.setAddress(address);
-                editText_pin.setText("");
+               /* editText_pin.setText("");
                 editText_mobile.setText("");
-                editText_address.setText("");
+                editText_address.setText("");*/
 
                 int age=myPreferences.getAge();
                 int second=myPreferences.getSecond();
