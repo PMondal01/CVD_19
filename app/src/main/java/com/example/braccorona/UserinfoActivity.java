@@ -75,7 +75,7 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 int fifth=myPreferences.getFifth();
                 int six=myPreferences.getSixth();
                 int seven=myPreferences.getSeven();
-                int total=second+third+four+fifth+six+seven;
+               // int total=second+third+four+fifth+six+seven;
                 //all questions
                 //age
                 int age_value=0;
@@ -119,7 +119,353 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 }else {
                     medical_worker=1;
                 }
-                if(total>=4)
+
+                //output
+                int output;
+                //first slab
+                if (medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==0 ) {
+                    output=0;
+                } else if (medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==1 ) {
+                    output=5;
+                } else if (medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==2 ){
+                   output=7;
+                }else if (medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=0;
+                }else if (medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==1 ){
+                    output=3;
+                }else if (medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==2 ){
+                    output=7;
+                }else if (medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==0) {
+                    output=0;
+                }else if (medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==1 ) {
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==2 ){
+                    output=7;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==0 ){
+                    output=0;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==1 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==2 ){
+                    output=7;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==1 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==2 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==1 ){
+                    output=3;
+                }
+                else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==2 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==1 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==2 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==1 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==2 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==1 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==2 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==2 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=2;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==1 ){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==2 ){
+                    output=3;
+                }
+                //second slab
+                //1
+                else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==0 ){
+                    output=2;
+                }//2
+                else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==1 ){
+                    output=3;
+                }//3
+                else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==0 ){
+                    output=2;
+                }//4
+                else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==1 ){
+                    output=3;
+                }//5
+                else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==2 ){
+                    output=3;
+                }//6
+                else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==0 ){
+                    output=1;
+                }//7
+                else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==1 ){
+                    output=6;
+                }//8
+                else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==2 ){
+                    output=6;
+                }//9
+                else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=1;
+                }//10
+                else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==1 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==2 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==1 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==0 ){
+                    output=1;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==1 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==2 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==0 ){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==0 ){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==1 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==2 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==0 ){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==1 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==2 ){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==0 ){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }
+
+                //third slab
+                else if(medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=0;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=5;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==2){
+                    output=7;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=0;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=0;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=7;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=0;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=7;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=2;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=2;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=3;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=2;
+                }else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=3;
+                }
+
+                //forth slab
+                else if(medical_worker==0 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=3;
+                } else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==0 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=1;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==0 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==0 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==1 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==0 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==0 && q2q3_value==2){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==0){
+                    output=4;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==1){
+                    output=6;
+                }else if(medical_worker==1 && q4q5_value==2 && age_value==1 && history_value==1 && q2q3_value==2){
+                    output=6;
+                }
+                else {
+                    output=12;
+                }
+
+                //resultactivity
+                if(output==0)
+                {
+                    Intent intent = new Intent(UserinfoActivity.this, ResultZeroActivity.class);
+                    startActivity(intent);
+                }else if (output==1){
+                    Intent intent = new Intent(UserinfoActivity.this, ResultOneActivity.class);
+                    startActivity(intent);
+                }else if (output==2){
+                    Intent intent = new Intent(UserinfoActivity.this, ResultTwoActivity.class);
+                    startActivity(intent);
+                }else if (output==3){
+                    Intent intent = new Intent(UserinfoActivity.this, ResultThreeActivity.class);
+                    startActivity(intent);
+                }else if (output==4){
+                    Intent intent = new Intent(UserinfoActivity.this, ResultFourActivity.class);
+                    startActivity(intent);
+                }else if (output==5){
+                    Intent intent = new Intent(UserinfoActivity.this, ResultFiveActivity.class);
+                    startActivity(intent);
+                }else if (output==6){
+                    Intent intent = new Intent(UserinfoActivity.this, ResultSixActivity.class);
+                    startActivity(intent);
+                }
+
+
+
+
+                /*if(total>=4)
                 {
                     Intent intent = new Intent(UserinfoActivity.this, SickActivity.class);
                     startActivity(intent);
@@ -127,7 +473,7 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 else {
                     Intent intent = new Intent(UserinfoActivity.this, HealthyActivity.class);
                     startActivity(intent);
-                }
+                }*/
 
             }
 
@@ -156,6 +502,11 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 String mob=myPreferences.getMobile();
                 String add=myPreferences.getAddress();
                 //location pass
+                Location mylocation=currentLocation;
+                String string_location=mylocation.toString();
+                myPreferences.setlocation(string_location);
+                String location=myPreferences.getlocation();
+
                 Double latitude= currentLocation.getLatitude();
                 float float_latitude = latitude.floatValue();
                 Double longitude=  currentLocation.getLongitude();
@@ -165,10 +516,7 @@ public class UserinfoActivity extends AppCompatActivity implements OnMapReadyCal
                 myPreferences.setlongitude(float_longitude);
                 Float param_longitude=myPreferences.getlongitude();
 
-                Location mylocation=currentLocation;
-                String string_location=mylocation.toString();
-                myPreferences.setlocation(string_location);
-                String location=myPreferences.getlocation();
+
                 //firebase
                 String key=databaseReference.push().getKey();
                 MyPreferences myPreferences=new MyPreferences(age,second,third,four,fifth,six,seven,pin_no,mob,add,param_latitude,param_longitude,location);

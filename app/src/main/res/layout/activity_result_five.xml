@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultFiveActivity"
+    android:padding="20dp"
+    >
+
+
+    <TextView
+        android:id="@+id/text_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ফলাফল: এইমুহূর্তে আপনার করোনা ভাইরাসের ঝুঁকি খুব কম"
+        android:textColor="#FDA30A"
+        android:gravity="center"
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        >
+
+    </TextView>
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/fifth"
+        android:layout_gravity="center"
+        android:layout_below="@id/text_header"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/text_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#150606"
+        android:text="@string/result_five"
+        android:gravity="center"
+        android:textSize="14dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/image"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        >
+
+    </TextView>
+
+    <Button
+        android:id="@+id/angry_btn"
+
+        android:text="পুনরায় শুরু করুন"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:layout_width="240dp"
+        android:layout_height="50dp"
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#A8A8A8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:layout_gravity="center"
+        android:layout_below="@id/text_middle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="5dp"
+        />
+
+</RelativeLayout>

@@ -3,7 +3,7 @@
     package="com.example.braccorona">
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:allowBackup="true"
@@ -12,7 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LocationActivity"></activity>
+        <activity android:name=".ResultZeroActivity"></activity>
+        <activity android:name=".ResultSevenActivity" />
+        <activity android:name=".ResultSixActivity" />
+        <activity android:name=".ResultFiveActivity" />
+        <activity android:name=".ResultFourActivity" />
+        <activity android:name=".ResultThreeActivity" />
+        <activity android:name=".ResultTwoActivity" />
+        <activity android:name=".ResultOneActivity" />
+        <activity android:name=".LocationActivity" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"

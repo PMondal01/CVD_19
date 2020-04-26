@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".UserinfoActivity"
     android:orientation="vertical"
-    android:padding="15dp">
+    android:padding="10dp">
 
    <TextView
        android:id="@+id/text_header"
@@ -49,15 +49,15 @@
        android:layout_centerVertical="true">
    </ImageView>
 
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_height="wrap_content">
 
-   <LinearLayout
-       android:id="@+id/linear"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:gravity="center"
-       android:layout_below="@id/image"
-       >
+
+
+
+
+   </RelativeLayout>
 
       <EditText
           android:id="@+id/editpin"
@@ -68,7 +68,9 @@
           android:layout_gravity="center"
           android:textColor="#787375"
           android:hint="pin"
-          android:inputType="number">
+          android:inputType="number"
+          android:layout_below="@id/image"
+          android:layout_marginLeft="33dp">
 
       </EditText>
 
@@ -82,17 +84,16 @@
           android:layout_gravity="center"
           android:textColor="#787375"
           android:hint="mobile"
-          android:inputType="phone">
+          android:inputType="phone"
+          android:layout_toRightOf="@id/editpin"
+          android:layout_below="@id/image"
+
+
+          >
 
       </EditText>
 
-   </LinearLayout>
-   <LinearLayout
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-       android:layout_gravity="center"
-       android:layout_below="@id/linear"
-       android:layout_centerHorizontal="true">
+
       <EditText
           android:id="@+id/editaddress"
           android:layout_width="150dp"
@@ -102,21 +103,23 @@
           android:layout_gravity="center"
           android:textColor="#787375"
           android:gravity="center"
-          android:hint="address">
+          android:hint="address"
+          android:layout_below="@id/editpin"
+          android:layout_centerHorizontal="true"
+          android:layout_centerVertical="true">
 
       </EditText>
 
 
-   </LinearLayout>
 
 
 
-  <Button
+   <Button
        android:id="@+id/angry_btn"
-       android:text="পরবর্তীতে যান"
+
+       android:text="পরবর্তিতে যান"
        android:textColor="#FFFFFF"
        android:textSize="30sp"
-       android:layout_alignParentBottom="true"
        android:layout_width="240dp"
        android:layout_height="50dp"
        android:background="@drawable/buttonshape"
@@ -125,8 +128,9 @@
        android:shadowDy="0"
        android:shadowRadius="5"
        android:layout_gravity="center"
+       android:layout_below="@id/editaddress"
        android:layout_centerHorizontal="true"
-      android:layout_marginTop="5dp"
+       android:layout_marginTop="5dp"
        />
 
 

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +20,7 @@ public class FirstActivity extends AppCompatActivity {
     private EditText editText;
     private Button button;
     MyPreferences myPreferences;
+    String message;
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
          super.onCreate(savedInstanceState);
@@ -29,17 +31,25 @@ public class FirstActivity extends AppCompatActivity {
         editText=findViewById(R.id.edittext);
         button=findViewById(R.id.angry_btn);
 
+
+
         button.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+
                 Intent intent=new  Intent(FirstActivity.this, SecondActivity.class);
-                saveData();
+
+
+                if(editText !=null){
+                    int age=Integer.parseInt(editText.getText().toString().trim());
+                    myPreferences.setAge(age);
+                }else {
+                    Toast.makeText(FirstActivity.this,
+                            "Enter your age", Toast.LENGTH_LONG).show();
+                }
+
                 startActivity(intent);
             }
-            private void saveData() {
-            int age=Integer.parseInt(editText.getText().toString().trim());
-                myPreferences.setAge(age);
-                }
         });
     }
 }
